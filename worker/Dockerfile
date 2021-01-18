@@ -1,5 +1,5 @@
 #
-FROM lraraujo/slurm-swarm-base:19.05.4
+FROM slurm-swarm-base:19.05.4
 
 #
 #COPY docker-entrypoint.sh /docker-entrypoint.sh

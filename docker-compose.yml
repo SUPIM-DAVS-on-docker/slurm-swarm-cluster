@@ -2,7 +2,9 @@ version: '3.4'
 
 services:
   controller:
-    image: lraraujo/slurm-swarm-controller:19.05.4
+    image: slurm-swarm-controller:19.05.4
+    container_name: slurm_controller
+    hostname: controller
     deploy:
       replicas: 1
       restart_policy:
@@ -14,7 +16,8 @@ services:
 #    command: "/usr/sbin/sshd -D"
 
   worker:
-    image: lraraujo/slurm-swarm-worker:19.05.4
+    image: slurm-swarm-worker:19.05.4
+    hostname: "worker-{{.Task.Slot}}"
     deploy:
       replicas: 2
       restart_policy:

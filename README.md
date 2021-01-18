@@ -10,6 +10,18 @@ Existem 3 imagens que devem estar disponíveis antes de executar a aplicação n
 
 Em cada umas das páginas linkadas acima, encontram-se as instruções específicas para utilização do `docker build`.
 
+```
+# Para criar as imagens localmente:
+git clone https://github.com/SUPIM-DAVS-on-docker/slurm-swarm-cluster
+cd slurm-swarm-cluster
+docker build -t slurm-swarm-base:19.05.4 ./base
+docker build -t slurm-swarm-worker:19.05.4 ./worker
+docker build -t slurm-swarm-controller:19.05.4 ./controller
+# Ou:
+## chmod +X build_images.sh
+## ./build_images.sh
+```
+
 ### Docker Hub
 
 As imagens estão disponíveis no Docker Hub e podem ser obtidas através dos comandos abaixo.
